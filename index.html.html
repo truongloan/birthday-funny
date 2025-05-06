@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Chúc mừng sinh nhật!</title>
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .gift-box {
+      width: 200px;
+      height: auto;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .message {
+      color: rgb(201, 252, 252);
+      font-size: 30px;
+      display: none;
+      text-align: center;
+      animation: fadeIn 1s forwards;
+      width: 350px;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .message:hover {
+      animation: tada 1s;
+    }
+
+    .picture{
+        border-radius: 50%;
+        background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Dùng thẻ img thay vì div, và chỉnh src -->
+<img src="/birthday/pixel-art-christmas-or-birthday-gift-red-and-gold-box-8bit-game-item-on-white-background-vector.jpg" alt="Gift Box" class="gift-box picture" onclick="showMessage()">
+
+<div class="message" id="birthdayMessage">🎉 Chúc mừng sinh nhật bà già Dương! Chúc bà sớm lấy giàu có bao nuôi 2 đứa em còn lại 😄. Mong bà luôn hạnh phúc nha. 🎉</div>
+
+<script>
+  function showMessage() {
+    const giftBox = document.querySelector('.gift-box');
+    const message = document.getElementById('birthdayMessage');
+    giftBox.style.display = 'none';
+    message.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
